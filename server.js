@@ -1,8 +1,11 @@
 const express = require("express");
 const ObjectId = require("mongodb").ObjectID;
-const server = express();
+const cors = require("cors");
 const body_parser = require("body-parser");
 
+const server = express();
+// enable cors for testing with local front-end
+server.use(cors());
 server.use(body_parser.json());
 
 const port = process.env.PORT || 4000;
